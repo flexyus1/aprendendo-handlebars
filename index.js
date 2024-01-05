@@ -1,3 +1,4 @@
+//Estrutura básica para rodar um server localhost com node e usar as handlebars
 const express = require('express')
 const exphbs = require('express-handlebars')
 
@@ -11,6 +12,7 @@ app.engine('handlebars', hbs.engine)
 app.set('view engine', 'handlebars')
 
 app.use(express.static('public'))
+//----------------------------------------------------------------------------------
 
 app.get('/dashboard', (req,res) => {
   const items = ['item a', 'item b', 'item c']
@@ -58,7 +60,7 @@ app.get('/', (req, res) => {
   
   const user = {
     name: "leozinho",
-    surname: "lindo",
+    surname: "kekw",
     age:21
   }
 
@@ -72,5 +74,5 @@ app.get('/', (req, res) => {
 })
 
 app.listen(3000, () =>{
-  console.log('Porta funcionando')
+  console.log('Porta funcionando no localhost:3000')
 })
